@@ -1,0 +1,36 @@
+<mat-toolbar color="primary" class="mat-elevation-z3">
+  I <mat-icon>favorite</mat-icon> dialogs
+</mat-toolbar>
+<br>
+<button mat-button color="primary" (click)="openDialogWithTemplateRef(myDialog)">Open dialog</button>
+<button mat-button color="accent" (click)="openDialogWithoutRef()">Open second dialog</button>
+<p><small>See the source code for more info</small></p>
+<!-- Dialog template -->
+<ng-template #myDialog>
+  <h2 matDialogTitle>Dialog!</h2>
+  <mat-dialog-content>
+    <p>The content of this dialog came from an <code>ng-template</code>! Amazing, right?</p>
+  </mat-dialog-content>
+  <mat-dialog-actions align="end">
+    <button mat-button matDialogClose color="primary">Dismiss</button>
+  </mat-dialog-actions>
+</ng-template>
+<!-- Dialog template #2 -->
+<ng-template #secondDialog>
+  <h2 matDialogTitle>Lovely dialog!</h2>
+  <mat-dialog-content>
+    <p>The content of this dialog came from an <code>ng-template</code>! Mind-blowing, right? (However, this wasn't passed in to a method while the other one was)</p>
+    <mat-slide-toggle>I'm a slide toggle!</mat-slide-toggle>
+    <mat-checkbox>I'm a checkbox!</mat-checkbox>
+  </mat-dialog-content>
+  <mat-dialog-actions align="end">
+    <button mat-button matDialogClose color="primary">I <mat-icon class="inline-icon">favorite</mat-icon> dialogs!</button>
+  </mat-dialog-actions>
+</ng-template>
+
+<!--
+Copyright Google LLC All Rights Reserved.
+
+Use of this source code is governed by an MIT-style license that can be
+found in the LICENSE file at https://angular.io/license
+-->
